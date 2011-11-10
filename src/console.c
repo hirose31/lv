@@ -450,7 +450,7 @@ public void ConsoleSetDown()
   if( keypad_local )
     tputs( keypad_local, 1, putfunc );
   if( exit_ca_mode )
-    tputs( exit_ca_mode, 1, putfunc );
+    ;/* tputs( exit_ca_mode, 1, putfunc ); not clear screen when quit */
   else {
     ConsoleSetCur( 0, HEIGHT - 1 );
     ConsolePrint( CR );

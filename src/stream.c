@@ -69,7 +69,9 @@ public stream_t *StreamOpen( byte *file )
 
   st = StreamAlloc();
 
-  if( NULL != (exts = Exts( file )) ){
+  if ((filter = getenv("LVPIPE")) != NULL) {
+    ;
+  } else if( NULL != (exts = Exts( file )) ){
     if( !strcmp( "gz", exts ) || !strcmp( "GZ", exts )
 	|| !strcmp( "z", exts ) || !strcmp( "Z", exts ) )
       filter = gz_filter;
