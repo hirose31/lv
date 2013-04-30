@@ -377,7 +377,7 @@ public void ConsoleTermInit()
 #endif /* TERMINFO */
 
   if( enter_ca_mode )
-    tputs( enter_ca_mode, 1, putfunc );
+    ; /*tputs( enter_ca_mode, 1, putfunc ); not clear screen */
   if( keypad_xmit )
     tputs( keypad_xmit, 1, putfunc );
 }
